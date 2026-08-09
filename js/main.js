@@ -1,11 +1,11 @@
 ```javascript
 /*
- * Main JavaScript File
- * Author: Z44NKO
+ * Main JavaScript Functionalities
+ * Portfolio: Z44NKO
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. بەڕێوەبردنی بەرزکردنەوە و نیشاندانی وێنەی بەکارهێنەر
+    // 1. Upload User Avatar Interactive Handler
     const uploadPrompt = document.getElementById('uploadPrompt');
     const imageUploader = document.getElementById('imageUploader');
     const userPhotoImage = document.getElementById('userPhotoImage');
@@ -20,15 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     userPhotoImage.src = e.target.result;
+                    userPhotoImage.style.display = 'block';
                     userPhotoImage.classList.remove('hidden');
-                    uploadPrompt.classList.add('hidden');
+                    uploadPrompt.style.display = 'none';
                 };
                 reader.readAsDataURL(file);
             }
         });
     }
 
-    // 2. بەڕێوەبردنی ناردنی ئیمەیل لە بەشی پەیوەندی (Contact Form)
+    // 2. Direct Contact Form Submission to Email
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
