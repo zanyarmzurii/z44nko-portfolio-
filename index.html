@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z44NKO | Complete Ultra Portfolio</title>
+    <title>Z44NKO | Portfolio & Official Website</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,17 +15,18 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Noto+Kufi+Arabic:wght@400;600;700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind Configuration -->
+    <!-- Tailwind Custom Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        neonRed: '#FF2A2A',
-                        darkRed: '#7A001E',
-                        deepBg: '#070204',
-                        cardBg: 'rgba(18, 10, 15, 0.75)',
-                        cardBorder: 'rgba(255, 42, 42, 0.25)'
+                        neonRed: '#FF1E27',
+                        neonRedHover: '#E01720',
+                        deepBg: '#0D0D0D',
+                        cardBg: '#161616',
+                        cardBorder: '#262626',
+                        accentDark: '#2B080A'
                     },
                     fontFamily: {
                         orbitron: ['Orbitron', 'sans-serif'],
@@ -37,28 +38,28 @@
         }
     </script>
 
-    <!-- External Custom CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="p-2 sm:p-4 md:p-6 lg:p-8 min-h-screen flex items-center justify-center">
+<body class="p-2 sm:p-4 md:p-6 lg:p-8 min-h-screen flex flex-col justify-between selection:bg-neonRed selection:text-white">
 
-    <!-- Container سەرەکی -->
+    <!-- Ambient Glow Orbs -->
+    <div class="fixed top-0 left-1/4 -translate-x-1/2 w-[500px] h-[500px] bg-neonRed/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-10 right-10 w-[400px] h-[400px] bg-neonRed/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+    <!-- Main Wrapper -->
     <div class="relative w-full max-w-[1440px] bg-deepBg rounded-3xl sm:rounded-[36px] border border-red-900/30 shadow-[0_0_80px_rgba(0,0,0,0.95)] overflow-hidden flex flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-10 my-auto">
         
-        <!-- ڕووناکی دواوە -->
-        <div class="absolute -top-32 -left-32 w-96 h-96 bg-neonRed/15 rounded-full blur-[140px] pointer-events-none"></div>
-        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-amber-500/10 rounded-full blur-[140px] pointer-events-none"></div>
-
-        <!-- بەشی هێدەر و ناڤبار -->
-        <header class="sticky top-0 z-50 flex items-center justify-between bg-[#11070c]/90 border border-red-900/40 rounded-2xl px-4 py-3 sm:px-6 backdrop-blur-md shadow-2xl mb-6">
+        <!-- HEADER NAVBAR -->
+        <header class="sticky top-0 z-50 flex items-center justify-between bg-[#161616]/90 border border-cardBorder rounded-2xl px-4 py-3 sm:px-6 backdrop-blur-md shadow-2xl mb-6">
             
-            <!-- لۆگۆ و ئاڵای کوردستان -->
+            <!-- Logo & Kurdistan Flag -->
             <div class="flex items-center gap-3">
                 <a href="#home" class="font-orbitron text-xl sm:text-2xl md:text-3xl font-black text-neonRed tracking-wider flex items-center">
                     Z44NKO<span class="text-white">.</span>
                 </a>
 
-                <!-- ئاڵای جوڵاو -->
+                <!-- Kurdistan Flag -->
                 <div class="flex items-center gap-2 bg-black/80 border border-red-500/40 px-3 py-1 rounded-full animate-flag shadow-lg">
                     <div class="w-6 h-4 rounded overflow-hidden flex flex-col border border-white/20">
                         <div class="h-1/3 bg-[#E4002B]"></div>
@@ -71,7 +72,7 @@
                 </div>
             </div>
 
-            <!-- بەشەکانی ناڤبار -->
+            <!-- Navbar Nav Links -->
             <nav class="hidden md:flex items-center gap-4 lg:gap-6 text-xs sm:text-sm font-bold text-slate-300">
                 <a href="#home" class="hover:text-neonRed transition-colors px-2 py-1">HOME</a>
                 <a href="#about" class="hover:text-neonRed transition-colors px-2 py-1">ABOUT</a>
@@ -81,21 +82,21 @@
                 <a href="#contact" class="hover:text-neonRed transition-colors px-2 py-1">CONTACT</a>
             </nav>
 
-            <!-- دوگمەی واتسئاپ -->
-            <a href="https://wa.me/9647506045491?text=%D8%B1%D9%88%DA%98%D8%A8%D8%A7%DA%AF%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF..." target="_blank" class="bg-neonRed hover:bg-red-600 text-white font-bold text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl glow-red flex items-center gap-2 transition duration-300">
+            <!-- Direct WhatsApp Button with Prepared Kurdish Message -->
+            <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%88%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF%21%20%D9%85%D9%86%20%D8%AF%DA%A4%DB%8C%DA%AA%20%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C%20%D9%BE%DA%95%DB%86%DA%98%DB%95%DB%8C%DB%95%DA%A9%DB%8C%20%DA%AF%D9%81%D8%AA%D9%88%DA%AF%DB%86%20%D8%A8%DA%A9%DB%95%DB%8C%D9%86..." target="_blank" class="bg-neonRed hover:bg-neonRedHover text-white font-bold text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl glow-red flex items-center gap-2 transition duration-300">
                 <span>Hire Me</span>
                 <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
         </header>
 
-        <!-- ناوەڕۆکی بەشەکان -->
+        <!-- SECTIONS CONTAINER -->
         <div class="space-y-16 py-4">
 
             <!-- 1. HOME SECTION -->
             <section id="home" class="scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
                 <div class="lg:col-span-7 space-y-5 text-right">
-                    <div class="inline-flex items-center gap-2 bg-red-950/80 border border-neonRed/40 px-3.5 py-1 rounded-full text-red-400 text-xs font-bold uppercase tracking-widest">
+                    <div class="inline-flex items-center gap-2 bg-accentDark border border-neonRed/40 px-3.5 py-1 rounded-full text-neonRed text-xs font-bold uppercase tracking-widest">
                         <span class="w-2 h-2 rounded-full bg-neonRed animate-ping"></span>
                         بخێرهاتی بۆ پۆرتفۆلیۆیا فخم
                     </div>
@@ -109,7 +110,7 @@
                         ئەز گەشەپێدەر و دیزاینەرێ کارێن دیجیتاڵیمە. ئارمانجا من دروستکرنا وێب‌سایت و دیزاینێن گەلەک پێشکەفتی، مۆدێرن و پڕوفیشناڵە ب بەرزترین کوالیتی بۆ پێشخستنا براندێ تە.
                     </p>
 
-                    <!-- ژمارەی ئامارەکان -->
+                    <!-- Stats Row -->
                     <div class="grid grid-cols-3 gap-3 max-w-md pt-2">
                         <div class="glass-card p-3 sm:p-4 rounded-xl text-center">
                             <div class="text-xl sm:text-2xl font-black text-neonRed font-orbitron">40+</div>
@@ -125,21 +126,40 @@
                         </div>
                     </div>
 
-                    <!-- دوگمەکان -->
+                    <!-- CTA Buttons -->
                     <div class="flex flex-wrap items-center gap-3 pt-2">
-                        <a href="https://wa.me/9647506045491" target="_blank" class="bg-neonRed hover:bg-red-600 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl glow-red flex items-center gap-2 transition duration-300">
+                        <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%88%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF%21%20%D9%85%D9%86%20%D8%AF%DA%A4%DB%8C%DA%AA%20%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C%20%D9%BE%DA%95%DB%86%DA%98%DB%95%DB%8C%DB%95%DA%A9%DB%8C%20%DA%AF%D9%81%D8%AA%D9%88%DA%AF%DB%86%20%D8%A8%DA%A9%DB%95%DB%8C%D9%86..." target="_blank" class="bg-neonRed hover:bg-neonRedHover text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl glow-red flex items-center gap-2 transition duration-300">
                             <span>پەیوەندی کرن</span>
                             <i class="fa-brands fa-whatsapp text-base"></i>
                         </a>
-                        <a href="#about" class="bg-[#1a0c12] hover:bg-neutral-800 text-slate-200 border border-neutral-700 font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition duration-300">
+                        <a href="#about" class="bg-cardBg hover:bg-neutral-800 text-slate-200 border border-cardBorder font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition duration-300">
                             دەربارەی من
+                        </a>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="flex items-center gap-3 pt-4 border-t border-cardBorder">
+                        <a href="https://snapchat.com/t/0kgVlpKA" target="_blank" class="w-9 h-9 rounded-xl bg-cardBg border border-cardBorder flex items-center justify-center text-yellow-400 hover:border-neonRed hover:scale-110 transition duration-300" title="Snapchat">
+                            <i class="fa-brands fa-snapchat"></i>
+                        </a>
+                        <a href="https://www.instagram.com/z44nko" target="_blank" class="w-9 h-9 rounded-xl bg-cardBg border border-cardBorder flex items-center justify-center text-pink-500 hover:border-neonRed hover:scale-110 transition duration-300" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@444.uw" target="_blank" class="w-9 h-9 rounded-xl bg-cardBg border border-cardBorder flex items-center justify-center text-cyan-400 hover:border-neonRed hover:scale-110 transition duration-300" title="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://t.me/z_14x" target="_blank" class="w-9 h-9 rounded-xl bg-cardBg border border-cardBorder flex items-center justify-center text-sky-400 hover:border-neonRed hover:scale-110 transition duration-300" title="Telegram">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <a href="mailto:z.14x@outlook.com" class="w-9 h-9 rounded-xl bg-cardBg border border-cardBorder flex items-center justify-center text-amber-300 hover:border-neonRed hover:scale-110 transition duration-300" title="Email">
+                            <i class="fa-regular fa-envelope"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- شوێنی وێنە / چوارچێوەی مۆبایل -->
+                <!-- Right Avatar Spot / Phone Frame -->
                 <div class="lg:col-span-5 flex justify-center items-center">
-                    <div class="relative w-full max-w-[320px] aspect-[9/16] phone-frame bg-[#0a0407] p-2 overflow-hidden group">
+                    <div class="relative w-full max-w-[320px] aspect-[9/16] phone-frame bg-[#0A0A0A] p-2 overflow-hidden group">
                         
                         <div class="absolute top-4 left-4 z-20 bg-black/80 border border-neonRed/50 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg backdrop-blur-sm">
                             <i class="fa-solid fa-mobile-screen text-neonRed"></i> Responsive
@@ -149,7 +169,10 @@
                             <i class="fa-solid fa-code text-neonRed"></i> Clean Code
                         </div>
 
-                        <div class="w-full h-full rounded-[24px] bg-neutral-900 overflow-hidden relative border border-neutral-800 flex flex-col items-center justify-center text-center p-4">
+                        <div class="w-full h-full rounded-[28px] bg-neutral-900 overflow-hidden relative border border-neutral-800 flex flex-col items-center justify-center text-center p-4">
+                            <!-- وێنەی بنەڕەتی (ئەگەر هەبێت) -->
+                            <img id="userPhotoImage" src="images/profile.jpg" onerror="this.style.display='none'; document.getElementById('uploadPrompt').style.display='flex';" class="absolute inset-0 w-full h-full object-cover" alt="Z44NKO Photo">
+
                             <div id="uploadPrompt" class="cursor-pointer flex flex-col items-center justify-center text-neutral-400 hover:text-white transition duration-300 z-10">
                                 <div class="w-16 h-16 rounded-full bg-neonRed/20 border-2 border-neonRed flex items-center justify-center mb-3 glow-red">
                                     <i class="fa-solid fa-camera text-neonRed text-2xl"></i>
@@ -159,7 +182,6 @@
                             </div>
 
                             <input type="file" id="imageUploader" accept="image/*" class="hidden">
-                            <img id="userPhotoImage" class="absolute inset-0 w-full h-full object-cover hidden" alt="Z44NKO Photo">
                             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 pointer-events-none"></div>
                         </div>
                     </div>
@@ -168,7 +190,7 @@
             </section>
 
             <!-- 2. ABOUT SECTION -->
-            <section id="about" class="scroll-mt-28 space-y-6 pt-6 border-t border-red-900/30">
+            <section id="about" class="scroll-mt-28 space-y-6 pt-6 border-t border-cardBorder">
                 <div class="text-center space-y-2">
                     <h2 class="text-2xl sm:text-3xl font-black font-orbitron text-white">
                         ABOUT <span class="text-neonRed text-glow-red">ME</span>
@@ -183,14 +205,14 @@
                         </p>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                            <div class="flex items-center gap-3 bg-black/50 p-3 rounded-xl border border-neutral-800">
+                            <div class="flex items-center gap-3 bg-black/50 p-3 rounded-xl border border-cardBorder">
                                 <i class="fa-solid fa-location-dot text-neonRed text-xl"></i>
                                 <div>
                                     <div class="text-[10px] text-slate-400">My Location</div>
-                                    <div class="text-xs font-bold text-white">Kurdistan, Iraq</div>
+                                    <div class="text-xs font-bold text-white">📍 Duhok, Kurdistan, Iraq</div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-3 bg-black/50 p-3 rounded-xl border border-neutral-800">
+                            <div class="flex items-center gap-3 bg-black/50 p-3 rounded-xl border border-cardBorder">
                                 <i class="fa-solid fa-phone text-neonRed text-xl"></i>
                                 <div>
                                     <div class="text-[10px] text-slate-400">My Phone Number</div>
@@ -206,7 +228,7 @@
                         </div>
                         <h3 class="text-base font-bold text-white">Professional Experience</h3>
                         <p class="text-xs text-slate-400">ئامادەکاری بۆ هەمی جۆرێن پڕۆژەیان ب کوالتییا بەرز</p>
-                        <a href="https://wa.me/9647506045491" target="_blank" class="bg-neonRed text-white text-xs font-bold px-4 py-2 rounded-xl glow-red">
+                        <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%88%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF%21%20%D9%85%D9%86%20%D8%AF%DA%A4%DB%8C%DA%AA%20%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C%20%D9%BE%DA%95%DB%86%DA%98%DB%95%DB%8C%DB%95%DA%A9%DB%8C%20%DA%AF%D9%81%D8%AA%D9%88%DA%AF%DB%86%20%D8%A8%DA%A9%DB%95%DB%8C%D9%86..." target="_blank" class="bg-neonRed hover:bg-neonRedHover text-white text-xs font-bold px-4 py-2 rounded-xl glow-red transition duration-300">
                             Download CV
                         </a>
                     </div>
@@ -214,7 +236,7 @@
             </section>
 
             <!-- 3. SERVICE SECTION -->
-            <section id="service" class="scroll-mt-28 space-y-6 pt-6 border-t border-red-900/30">
+            <section id="service" class="scroll-mt-28 space-y-6 pt-6 border-t border-cardBorder">
                 <div class="text-center space-y-2">
                     <h2 class="text-2xl sm:text-3xl font-black font-orbitron text-white">
                         MY <span class="text-neonRed text-glow-red">SERVICES</span>
@@ -267,8 +289,8 @@
                 </div>
             </section>
 
-            <!-- 4. PROJECT SECTION (پڕۆژە ڕاستەقینەکان) -->
-            <section id="project" class="scroll-mt-28 space-y-6 pt-6 border-t border-red-900/30">
+            <!-- 4. PROJECT SECTION (پڕۆژە ڕاستەقینەکانی زانکۆ) -->
+            <section id="project" class="scroll-mt-28 space-y-6 pt-6 border-t border-cardBorder">
                 <div class="text-center space-y-2">
                     <h2 class="text-2xl sm:text-3xl font-black font-orbitron text-white">
                         LATEST <span class="text-neonRed text-glow-red">PROJECTS</span>
@@ -280,7 +302,7 @@
                     
                     <!-- 1. سیستەمی کاشێری -->
                     <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-1 transition duration-300">
-                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-neutral-800">
+                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-cardBorder">
                             <div class="text-center space-y-2 p-4">
                                 <i class="fa-solid fa-cash-register text-4xl text-neonRed"></i>
                                 <div class="text-xs font-bold text-slate-300">POS Cashier System</div>
@@ -290,15 +312,15 @@
                             <h3 class="text-base font-bold text-white">سیستەمێ کاشێریێ (POS)</h3>
                             <p class="text-xs text-slate-400">سیستەمەکێ گەلەک پێشکەفتی بۆ بەڕێوەبرنا فڕۆشگەهان، گونجاو بۆ مۆبایل و دێسکتاپێ.</p>
                             <div class="flex flex-wrap gap-1.5 pt-2">
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Mobile & Desktop</span>
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">POS System</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Mobile & Desktop</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">POS System</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 2. زمانەکانی جیهان -->
                     <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-1 transition duration-300">
-                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-neutral-800">
+                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-cardBorder">
                             <div class="text-center space-y-2 p-4">
                                 <i class="fa-solid fa-language text-4xl text-neonRed"></i>
                                 <div class="text-xs font-bold text-slate-300">Language Learning Web</div>
@@ -308,15 +330,15 @@
                             <h3 class="text-base font-bold text-white">وێب‌سایتێ فێربوونا زمانێن جیهانی</h3>
                             <p class="text-xs text-slate-400">پلاتفۆڕمەکا ئۆنلاین بۆ فێربوونا زمانێن بیانی ب ڕێکارێن نووی و کارلێککار.</p>
                             <div class="flex flex-wrap gap-1.5 pt-2">
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Education</span>
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Web Platform</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Education</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Web Platform</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 3. زیرەکیی دەستکردی کوردی -->
                     <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-1 transition duration-300">
-                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-neutral-800">
+                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-cardBorder">
                             <div class="text-center space-y-2 p-4">
                                 <i class="fa-solid fa-robot text-4xl text-neonRed"></i>
                                 <div class="text-xs font-bold text-slate-300">Kurdish AI Platform</div>
@@ -326,15 +348,15 @@
                             <h3 class="text-base font-bold text-white">زیرەکیا دەستکرد ب زمانێ کوردی</h3>
                             <p class="text-xs text-slate-400">پلاتفۆڕمەکا زیرەکا هۆشێ دەستکرد ئامادەکری ب زمانێ شێرینێ کوردی.</p>
                             <div class="flex flex-wrap gap-1.5 pt-2">
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Artificial Intelligence</span>
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Kurdish AI</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Artificial Intelligence</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Kurdish AI</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 4. داونلۆدکەری میدیا -->
                     <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-1 transition duration-300">
-                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-neutral-800">
+                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-cardBorder">
                             <div class="text-center space-y-2 p-4">
                                 <i class="fa-solid fa-circle-down text-4xl text-neonRed"></i>
                                 <div class="text-xs font-bold text-slate-300">Media Downloader Tool</div>
@@ -344,15 +366,15 @@
                             <h3 class="text-base font-bold text-white">داونلۆدکەرێ ڤیدیۆیان ژ سۆشیال میدیایێ</h3>
                             <p class="text-xs text-slate-400">ئامرازەکێ خێرا بۆ ڕاکێشان و داونلۆدکرنا ڤیدیۆیان ژ تۆڕێن سۆشیال میدیایێ ب کواڵتییا خاوەن.</p>
                             <div class="flex flex-wrap gap-1.5 pt-2">
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Video Downloader</span>
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Tools</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Video Downloader</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Tools</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 5. خەرجی و داهاتی ڕۆژانە -->
                     <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-1 transition duration-300">
-                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-neutral-800">
+                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-cardBorder">
                             <div class="text-center space-y-2 p-4">
                                 <i class="fa-solid fa-wallet text-4xl text-neonRed"></i>
                                 <div class="text-xs font-bold text-slate-300">Expense & Income Manager</div>
@@ -362,15 +384,15 @@
                             <h3 class="text-base font-bold text-white">وێب‌سایتێ خەرجی و داهاتێن ڕۆژانە</h3>
                             <p class="text-xs text-slate-400">سیستەمەکێ دارایی یێ ئاسان بۆ تۆمارکرن و کۆنترۆڵکرنا خەرجی و داهاتێن ڕۆژانە.</p>
                             <div class="flex flex-wrap gap-1.5 pt-2">
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Finance App</span>
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Tracker</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Finance App</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Tracker</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 6. بازارێ دۆلار و زێڕ -->
                     <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-1 transition duration-300">
-                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-neutral-800">
+                        <div class="h-44 bg-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-cardBorder">
                             <div class="text-center space-y-2 p-4">
                                 <i class="fa-solid fa-coins text-4xl text-neonRed"></i>
                                 <div class="text-xs font-bold text-slate-300">Gold & Dollar Exchange Rate</div>
@@ -380,8 +402,8 @@
                             <h3 class="text-base font-bold text-white">وێب‌سایتێ بازارێ دۆلاری و زێڕی</h3>
                             <p class="text-xs text-slate-400">دیارکرنا نرخێن ڕاستەوخۆ (Live) یێن دۆلاری و زێڕی ب شێوازەکێ خێرا د بازاردا.</p>
                             <div class="flex flex-wrap gap-1.5 pt-2">
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Live Rates</span>
-                                <span class="text-[10px] bg-red-950/80 border border-red-800 text-red-300 px-2 py-0.5 rounded">Market Tracker</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Live Rates</span>
+                                <span class="text-[10px] bg-accentDark border border-red-800 text-red-300 px-2 py-0.5 rounded">Market Tracker</span>
                             </div>
                         </div>
                     </div>
@@ -390,7 +412,7 @@
             </section>
 
             <!-- 5. SKILL SECTION -->
-            <section id="skill" class="scroll-mt-28 space-y-6 pt-6 border-t border-red-900/30">
+            <section id="skill" class="scroll-mt-28 space-y-6 pt-6 border-t border-cardBorder">
                 <div class="text-center space-y-2">
                     <h2 class="text-2xl sm:text-3xl font-black font-orbitron text-white">
                         TECHNICAL <span class="text-neonRed text-glow-red">SKILLS</span>
@@ -427,7 +449,7 @@
             </section>
 
             <!-- 6. CONTACT SECTION -->
-            <section id="contact" class="scroll-mt-28 space-y-6 pt-6 border-t border-red-900/30">
+            <section id="contact" class="scroll-mt-28 space-y-6 pt-6 border-t border-cardBorder">
                 <div class="text-center space-y-2">
                     <h2 class="text-2xl sm:text-3xl font-black font-orbitron text-white">
                         CONTACT <span class="text-neonRed text-glow-red">ME</span>
@@ -448,11 +470,11 @@
                                 <i class="fa-brands fa-snapchat text-yellow-400 text-lg"></i>
                                 <span class="text-xs font-bold text-white">Snapchat</span>
                             </a>
-                            <a href="https://www.instagram.com/z44nko?igsh=MWtldmkwYWN2NW5udw%3D%3D&utm_source=qr" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-2.5 hover:border-pink-500 transition">
+                            <a href="https://www.instagram.com/z44nko" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-2.5 hover:border-pink-500 transition">
                                 <i class="fa-brands fa-instagram text-pink-400 text-lg"></i>
                                 <span class="text-xs font-bold text-white">Instagram</span>
                             </a>
-                            <a href="https://www.tiktok.com/@444.uw?_r=1&_t=ZS-98kHo8kPUlW" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-2.5 hover:border-cyan-400 transition">
+                            <a href="https://www.tiktok.com/@444.uw" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-2.5 hover:border-cyan-400 transition">
                                 <i class="fa-brands fa-tiktok text-cyan-400 text-lg"></i>
                                 <span class="text-xs font-bold text-white">TikTok</span>
                             </a>
@@ -462,19 +484,19 @@
                             </a>
                         </div>
 
-                        <a href="https://wa.me/9647506045491?text=%D8%B1%D9%88%DA%98%D8%A8%D8%A7%DA%AF%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF..." target="_blank" class="bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white p-3.5 rounded-xl flex items-center gap-3 shadow-lg glow-red transition duration-300 w-full justify-center">
+                        <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%8ء%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF%21%20%D9%85%D9%86%20%D8%AF%DA%A4%DB%8C%DA%AA%20%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C%20%D9%BE%DA%95%DB%86%DA%98%DB%95%DB%8C%DB%95%DA%A9%DB%8C%20%DA%AF%D9%81%D8%AA%D9%88%DA%AF%DB%86%20%D8%A8%DA%A9%DB%95%DB%8C%D9%86..." target="_blank" class="bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white p-3.5 rounded-xl flex items-center gap-3 shadow-lg glow-red transition duration-300 w-full justify-center">
                             <i class="fa-brands fa-whatsapp text-xl"></i>
-                            <span class="text-xs font-bold">پەیوەندیا ڕاستەوخۆ ستافێ واتسئاپێ</span>
+                            <span class="text-xs font-bold">پەیوەندیا ڕاستەوخۆ واتسئاپێ (+964 750 604 5491)</span>
                         </a>
                     </div>
 
                     <div class="lg:col-span-7 glass-card p-5 rounded-2xl space-y-4">
                         <h3 class="text-base font-bold text-white">Send Email</h3>
                         <form id="contactForm" class="space-y-3">
-                            <input type="text" id="senderName" placeholder="Your name" required class="w-full bg-black/60 border border-neutral-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-neonRed transition">
-                            <input type="email" id="senderEmail" placeholder="Your email" required class="w-full bg-black/60 border border-neutral-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-neonRed transition">
-                            <textarea id="senderMessage" placeholder="Your message..." rows="3" required class="w-full bg-black/60 border border-neutral-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-neonRed transition"></textarea>
-                            <button type="submit" class="bg-neonRed hover:bg-red-600 text-white font-bold text-xs px-6 py-2.5 rounded-xl glow-red w-full transition duration-300">
+                            <input type="text" id="senderName" placeholder="Your name" required class="w-full bg-black/60 border border-cardBorder rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-neonRed transition">
+                            <input type="email" id="senderEmail" placeholder="Your email" required class="w-full bg-black/60 border border-cardBorder rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-neonRed transition">
+                            <textarea id="senderMessage" placeholder="Your message..." rows="3" required class="w-full bg-black/60 border border-cardBorder rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-neonRed transition"></textarea>
+                            <button type="submit" class="bg-neonRed hover:bg-neonRedHover text-white font-bold text-xs px-6 py-2.5 rounded-xl glow-red w-full transition duration-300">
                                 Send Message
                             </button>
                         </form>
@@ -485,8 +507,8 @@
 
         </div>
 
-        <!-- فوتەر -->
-        <footer class="relative z-10 pt-4 border-t border-red-900/30 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-400 gap-2 mt-8">
+        <!-- FOOTER -->
+        <footer class="relative z-10 pt-4 border-t border-cardBorder flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-400 gap-2 mt-8">
             <div class="flex items-center gap-2">
                 <i class="fa-solid fa-shield-halved text-neonRed"></i>
                 <span>All Rights Reserved © Z44NKO 2026</span>
@@ -498,7 +520,7 @@
 
     </div>
 
-    <!-- فایلی سەرەکیی جاڤاسکریپت -->
+    <!-- Main JS -->
     <script src="js/main.js"></script>
 </body>
 </html>
