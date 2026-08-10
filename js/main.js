@@ -1,11 +1,39 @@
 ```javascript
 /*
- * Main JavaScript Functionalities
- * Portfolio: Z44NKO
+ * Z44NKO Main Ultra Fast Logic Implementation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Upload User Avatar Interactive Handler
+    // 1. Mobile Slide Drawer Toggle Logic
+    const openDrawer = document.getElementById('openDrawer');
+    const closeDrawer = document.getElementById('closeDrawer');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function toggleDrawer(open) {
+        if (open) {
+            mobileDrawer.classList.add('open');
+            drawerOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileDrawer.classList.remove('open');
+            drawerOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (openDrawer && closeDrawer && drawerOverlay) {
+        openDrawer.addEventListener('click', () => toggleDrawer(true));
+        closeDrawer.addEventListener('click', () => toggleDrawer(false));
+        drawerOverlay.addEventListener('click', () => toggleDrawer(false));
+
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', () => toggleDrawer(false));
+        });
+    }
+
+    // 2. Interactive Profile Image Uploader Mechanism
     const uploadPrompt = document.getElementById('uploadPrompt');
     const imageUploader = document.getElementById('imageUploader');
     const userPhotoImage = document.getElementById('userPhotoImage');
@@ -21,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.onload = function(e) {
                     userPhotoImage.src = e.target.result;
                     userPhotoImage.style.display = 'block';
-                    userPhotoImage.classList.remove('hidden');
                     uploadPrompt.style.display = 'none';
                 };
                 reader.readAsDataURL(file);
@@ -29,18 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Direct Contact Form Submission to Email
+    // 3. Contact Form Direct Mailto Listener
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
             const name = document.getElementById('senderName')?.value || '';
             const email = document.getElementById('senderEmail')?.value || '';
             const message = document.getElementById('senderMessage')?.value || '';
 
             const mailtoUrl = `mailto:z.14x@outlook.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\nFrom: " + email)}`;
-            
             window.location.href = mailtoUrl;
         });
     }
