@@ -4,595 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Z44NKO - Official Mobile-First Portfolio & Web Developer Website">
+    <meta name="description" content="Z44NKO - Official Fast Responsive Portfolio Website">
     <title>Z44NKO | Portfolio & Official Website</title>
 
-    <!-- Preconnect for Google Fonts -->
+    <!-- Google Fonts Optimized Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;900&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome 6 CDN -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* Modern Mobile-First CSS Reset & Variables */
-        :root {
-            --bg-color: #0d0d0d;
-            --card-bg: #161616;
-            --card-border: #262626;
-            --neon-red: #ff1e27;
-            --neon-red-hover: #e01720;
-            --accent-dark: #2b080a;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --glow-red: 0 0 25px rgba(255, 30, 39, 0.4);
-            --glow-heavy: 0 0 45px rgba(255, 30, 39, 0.65);
-            --radius-lg: 20px;
-            --radius-md: 14px;
-            --font-arabic: 'Noto Kufi Arabic', system-ui, sans-serif;
-            --font-orbitron: 'Orbitron', system-ui, sans-serif;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html, body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-arabic);
-            line-height: 1.6;
-            overflow-x: hidden;
-            width: 100%;
-        }
-
-        /* Fluid Typography */
-        h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); }
-        h2 { font-size: clamp(1.4rem, 4vw, 2.2rem); }
-        h3 { font-size: clamp(1.1rem, 3vw, 1.5rem); }
-        p, span, a { font-size: clamp(0.85rem, 2.5vw, 1rem); }
-
-        /* Layout Container */
-        .container {
-            width: 100%;
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        /* Glowing Orbs */
-        .ambient-orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(120px);
-            pointer-events-none: none;
-            z-index: 0;
-            opacity: 0.6;
-            will-change: transform;
-        }
-        .orb-1 {
-            top: -100px;
-            left: -100px;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 30, 39, 0.15);
-        }
-        .orb-2 {
-            bottom: -100px;
-            right: -100px;
-            width: 350px;
-            height: 350px;
-            background: rgba(255, 30, 39, 0.08);
-        }
-
-        /* Glassmorphism Navigation */
-        .header-nav {
-            position: sticky;
-            top: 0.75rem;
-            z-index: 100;
-            background: rgba(22, 22, 22, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-md);
-            padding: 0.75rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .logo {
-            font-family: var(--font-orbitron);
-            font-weight: 900;
-            color: var(--neon-red);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            letter-spacing: 1px;
-            min-height: 44px;
-        }
-        .logo span { color: #fff; }
-
-        /* Kurdistan Flag Badge */
-        .flag-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 30, 39, 0.3);
-            padding: 0.25rem 0.6rem;
-            border-radius: 20px;
-            animation: flagWave 3.5s ease-in-out infinite;
-        }
-
-        .flag-icon {
-            width: 22px;
-            height: 14px;
-            border-radius: 2px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .flag-red { height: 33.33%; background: #E4002B; }
-        .flag-white { height: 33.33%; background: #FFF; position: relative; display: flex; align-items: center; justify-content: center; }
-        .flag-sun { width: 4px; height: 4px; background: #FEC500; border-radius: 50%; box-shadow: 0 0 3px #FEC500; }
-        .flag-green { height: 33.33%; background: #007A3D; }
-
-        @keyframes flagWave {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-3px); }
-        }
-
-        /* Desktop Nav Links */
-        .desktop-nav {
-            display: none;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .desktop-nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-            min-height: 44px;
-            display: inline-flex;
-            align-items: center;
-        }
-        .desktop-nav a:hover {
-            color: var(--neon-red);
-        }
-
-        /* Mobile Menu Hamburger Toggle */
-        .hamburger-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.4rem;
-            cursor: pointer;
-            min-width: 44px;
-            min-height: 44px;
-            border-radius: 8px;
-        }
-
-        /* Mobile Drawer Menu */
-        .mobile-drawer {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 300px;
-            height: 100vh;
-            background: #121212;
-            border-left: 1px solid var(--card-border);
-            z-index: 1000;
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
-        }
-        .mobile-drawer.open {
-            right: 0;
-        }
-        .drawer-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(4px);
-            z-index: 999;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.35s ease;
-        }
-        .drawer-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .drawer-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--card-border);
-        }
-        .mobile-drawer a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            min-height: 44px;
-            padding: 0.25rem 0.5rem;
-            border-radius: 8px;
-            transition: background 0.2s ease, color 0.2s ease;
-        }
-        .mobile-drawer a:hover {
-            background: rgba(255, 30, 39, 0.1);
-            color: var(--neon-red);
-        }
-
-        /* Cards and Grid System */
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-lg);
-            padding: 1.25rem;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(255, 30, 39, 0.4);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px -5px rgba(255, 30, 39, 0.2);
-        }
-
-        /* Buttons */
-        .btn-primary {
-            background: var(--neon-red);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-md);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            box-shadow: var(--glow-red);
-            transition: background 0.3s ease, transform 0.2s ease;
-            min-height: 44px;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary:hover {
-            background: var(--neon-red-hover);
-            transform: scale(1.02);
-        }
-        .btn-secondary {
-            background: var(--card-bg);
-            color: var(--text-main);
-            border: 1px solid var(--card-border);
-            text-decoration: none;
-            font-weight: 700;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-md);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: border-color 0.3s ease, transform 0.2s ease;
-            min-height: 44px;
-        }
-        .btn-secondary:hover {
-            border-color: var(--neon-red);
-            transform: scale(1.02);
-        }
-
-        /* Single-Column Mobile First Layout */
-        .main-wrapper {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-            margin-top: 1.5rem;
-        }
-
-        /* Hero Section */
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-            text-align: right;
-        }
-        .tag-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--accent-dark);
-            border: 1px solid rgba(255, 30, 39, 0.4);
-            color: var(--neon-red);
-            padding: 0.35rem 0.85rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            width: fit-content;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-md);
-            padding: 0.75rem;
-            text-align: center;
-        }
-        .stat-number {
-            font-family: var(--font-orbitron);
-            color: var(--neon-red);
-            font-weight: 900;
-            font-size: 1.25rem;
-        }
-        .stat-label {
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-
-        /* Social Channels Bar */
-        .social-bar {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
-        .social-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-        .social-btn:hover {
-            border-color: var(--neon-red);
-            transform: translateY(-2px);
-        }
-
-        /* Profile Phone Frame */
-        .profile-container {
-            display: flex;
-            justify-content: center;
-        }
-        .phone-frame {
-            width: 100%;
-            max-width: 310px;
-            aspect-ratio: 9/16;
-            background: #0a0a0a;
-            border: 2px solid rgba(255, 30, 39, 0.4);
-            border-radius: 36px;
-            padding: 0.5rem;
-            position: relative;
-            box-shadow: var(--glow-red);
-            overflow: hidden;
-        }
-        .phone-inner {
-            width: 100%;
-            height: 100%;
-            border-radius: 28px;
-            background: #121212;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--card-border);
-        }
-        .phone-avatar {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            inset: 0;
-        }
-        .upload-trigger {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            z-index: 10;
-            color: var(--text-muted);
-            text-align: center;
-            padding: 1rem;
-        }
-        .upload-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: rgba(255, 30, 39, 0.15);
-            border: 2px solid var(--neon-red);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--neon-red);
-            font-size: 1.5rem;
-            box-shadow: var(--glow-red);
-        }
-
-        /* Section Headings */
-        .section-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.25rem;
-        }
-        .section-title {
-            font-family: var(--font-orbitron);
-            font-weight: 900;
-        }
-        .section-title span {
-            color: var(--neon-red);
-            text-shadow: 0 0 15px rgba(255, 30, 39, 0.6);
-        }
-        .section-subtitle {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        /* Services Grid */
-        .grid-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        /* Projects Grid */
-        .project-card-header {
-            height: 160px;
-            background: #0d0d0d;
-            border-bottom: 1px solid var(--card-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            border-top-left-radius: var(--radius-lg);
-            border-top-right-radius: var(--radius-lg);
-        }
-        .project-icon {
-            font-size: 2.5rem;
-            color: var(--neon-red);
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-        }
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.85rem;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-        .form-input {
-            background: rgba(0,0,0,0.6);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-md);
-            padding: 0.75rem 1rem;
-            color: var(--text-main);
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-        .form-input:focus {
-            border-color: var(--neon-red);
-        }
-
-        /* Footer */
-        .footer-bar {
-            border-top: 1px solid var(--card-border);
-            padding-top: 1.5rem;
-            margin-top: 3rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.75rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-        }
-
-        /* Responsive Breakpoints (Tablet & Desktop Enhancements) */
-        @media (min-width: 640px) {
-            .skills-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .grid-cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 768px) {
-            .hamburger-btn {
-                display: none;
-            }
-            .desktop-nav {
-                display: flex;
-            }
-            .hero-grid {
-                grid-template-columns: 12fr 10fr;
-            }
-            .contact-grid {
-                grid-template-columns: 5fr 7fr;
-            }
-            .footer-bar {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .grid-cards.services-4col {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .grid-cards.projects-3col {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .skills-grid {
-                grid-template-columns: repeat(6, 1fr);
-            }
-        }
-    </style>
+    <!-- Custom Ultra Fast CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Ambient Glow Orbs -->
+    <!-- Light Background Ambient Glow Orbs -->
     <div class="ambient-orb orb-1"></div>
     <div class="ambient-orb orb-2"></div>
 
@@ -601,7 +29,7 @@
         <!-- HEADER NAVBAR -->
         <header class="header-nav">
             
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div class="brand-group">
                 <!-- Logo -->
                 <a href="#home" class="logo">
                     Z44NKO<span>.</span>
@@ -614,29 +42,29 @@
                         <div class="flag-white"><div class="flag-sun"></div></div>
                         <div class="flag-green"></div>
                     </div>
-                    <span style="font-size: 0.65rem; font-weight: 700; color: #e5e7eb;">KURDISTAN</span>
+                    <span class="flag-text">KURDISTAN</span>
                 </div>
             </div>
 
-            <!-- Desktop Links -->
+            <!-- Desktop Nav Links -->
             <nav class="desktop-nav">
-                <a href="#home">HOME</a>
-                <a href="#about">ABOUT</a>
-                <a href="#service">SERVICE</a>
-                <a href="#project">PROJECT</a>
-                <a href="#skill">SKILL</a>
-                <a href="#contact">CONTACT</a>
+                <a href="#home" class="nav-link active">HOME</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#service" class="nav-link">SERVICE</a>
+                <a href="#project" class="nav-link">PROJECT</a>
+                <a href="#skill" class="nav-link">SKILL</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
             </nav>
 
             <!-- Action WhatsApp CTA Button -->
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%88%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF%21%20%D9%85%D9%86%20%D8%AF%DA%A4%DB%8C%DA%AA%20%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C%20%D9%BE%DA%95%DB%86%DA%98%DB%95%DB%8C%DB%95%DA%A9%DB%8C%20%DA%AF%D9%81%D8%AA%D9%88%DA%AF%DB%86%20%D8%A8%DA%A9%DB%95%DB%8C%D9%86..." target="_blank" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">
+            <div class="nav-actions">
+                <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%88%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF%21%20%D9%85%D9%86%20%D8%AF%DA%A4%DB%8C%DA%AA%20%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C%20%D9%BE%DA%95%DB%86%DA%98%DB%95%DB%8C%DB%95%DA%A9%DB%8C%20%DA%AF%D9%81%D8%AA%D9%88%DA%AF%DB%86%20%D8%A8%DA%A9%DB%95%DB%8C%D9%86..." target="_blank" class="btn-primary btn-nav">
                     <span>Hire Me</span>
-                    <i class="fa-solid fa-arrow-right" style="font-size: 0.7rem;"></i>
+                    <i class="fa-solid fa-arrow-right icon-arrow"></i>
                 </a>
 
                 <!-- Mobile Hamburger Toggle -->
-                <button class="hamburger-btn" id="openDrawer" aria-label="Open navigation drawer">
+                <button class="hamburger-btn" id="openDrawer" aria-label="پێڕستی بەشەکان">
                     <i class="fa-solid fa-bars-staggered"></i>
                 </button>
             </div>
@@ -647,7 +75,7 @@
         <aside class="mobile-drawer" id="mobileDrawer">
             <div class="drawer-header">
                 <a href="#home" class="logo">Z44NKO<span>.</span></a>
-                <button class="hamburger-btn" id="closeDrawer" aria-label="Close navigation drawer">
+                <button class="hamburger-btn" id="closeDrawer" aria-label="داخستنی پێڕست">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -667,16 +95,16 @@
                 
                 <div class="hero-content">
                     <div class="tag-badge">
-                        <i class="fa-solid fa-circle" style="font-size: 0.5rem;"></i>
+                        <i class="fa-solid fa-circle dot-icon"></i>
                         بخێرهاتی بۆ پۆرتفۆلیۆیا فخم
                     </div>
 
                     <h1>
                         Welcome<br>
-                        <span style="color: var(--neon-red); text-shadow: 0 0 15px rgba(255,30,39,0.7);">Hello Everyone I'm Z44NKO</span>
+                        <span class="text-glow-red">Hello Everyone I'm Z44NKO</span>
                     </h1>
 
-                    <p style="color: var(--text-muted);">
+                    <p class="text-muted">
                         ئەز گەشەپێدەر و دیزاینەرێ کارێن دیجیتاڵیمە. ئارمانجا من دروستکرنا وێب‌سایت و دیزاینێن گەلەک پێشکەفتی، مۆدێرن و پڕوفیشناڵە ب بەرزترین کوالیتی بۆ پێشخستنا براندێ تە.
                     </p>
 
@@ -697,8 +125,8 @@
                     </div>
 
                     <!-- CTA Action Buttons -->
-                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                        <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%8ء%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF%21%20%D9%85%D9%86%20%D8%AF%DA%A4%DB%8C%DA%AA%20%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C%20%D9%BE%DA%95%DB%86%DA%98%DB%95%DB%8C%DB%95%DA%A9%DB%8C%20%DA%AF%D9%81%D8%AA%D9%88%DA%AF%DB%86%20%D8%A8%DA%A9%DB%95%DB%8C%D9%86..." target="_blank" class="btn-primary">
+                    <div class="cta-group">
+                        <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%88%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88%20%DA%AF%DB%95%D8%AD%D9%85%DB%95%D8%AF%21%20%D9%85%D9%86%20%D8%AF%DA%A4%DB%8C%DA%AA%20%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C%20%D9%BE%DA%95%DB%86%DA%98%DB%95%DB%8C%DB%95%DA%A9%DB%8C%20%DA%AF%D9%81%D8%AA%D9%88%DA%AF%DB%86%20%D8%A8%DA%A9%DB%95%DB%8C%D9%86..." target="_blank" class="btn-primary">
                             <span>پەیوەندی کرن</span>
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
@@ -709,29 +137,30 @@
 
                     <!-- Social Channels -->
                     <div class="social-bar">
-                        <a href="https://snapchat.com/t/0kgVlpKA" target="_blank" class="social-btn" aria-label="Snapchat" style="color: #facc15;"><i class="fa-brands fa-snapchat"></i></a>
-                        <a href="https://www.instagram.com/z44nko" target="_blank" class="social-btn" aria-label="Instagram" style="color: #ec4899;"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@444.uw" target="_blank" class="social-btn" aria-label="TikTok" style="color: #22d3ee;"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="https://t.me/z_14x" target="_blank" class="social-btn" aria-label="Telegram" style="color: #38bdf8;"><i class="fa-brands fa-telegram"></i></a>
-                        <a href="mailto:z.14x@outlook.com" class="social-btn" aria-label="Email" style="color: #fcd34d;"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="https://snapchat.com/t/0kgVlpKA" target="_blank" class="social-btn snapchat" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+                        <a href="https://www.instagram.com/z44nko" target="_blank" class="social-btn instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@444.uw" target="_blank" class="social-btn tiktok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://t.me/z_14x" target="_blank" class="social-btn telegram" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="mailto:z.14x@outlook.com" class="social-btn email" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
                     </div>
                 </div>
 
-                <!-- Right Avatar Phone Frame Container -->
+                <!-- Right Avatar Liquid LED Glow Frame -->
                 <div class="profile-container">
-                    <div class="phone-frame">
-                        <div class="phone-inner">
-                            <img id="userPhotoImage" src="images/profile.jpg" loading="lazy" onerror="this.style.display='none'; document.getElementById('uploadPrompt').style.display='flex';" class="phone-avatar" alt="Z44NKO Profile Picture">
+                    <div class="liquid-led-frame">
+                        <div class="led-glow-ring"></div>
+                        <div class="liquid-inner">
+                            <img id="userPhotoImage" src="images/profile.jpg" loading="lazy" class="profile-img" alt="Z44NKO Profile Picture">
                             
                             <div id="uploadPrompt" class="upload-trigger">
                                 <div class="upload-icon">
                                     <i class="fa-solid fa-camera"></i>
                                 </div>
-                                <span style="font-weight: 700; color: #fff;">جهێ وێنێ تە</span>
-                                <span style="font-size: 0.7rem;">(بکلیکە بۆ هەڵبژارتنێ)</span>
+                                <span class="upload-title">جهێ وێنێ تە یێ شاهانە</span>
+                                <span class="upload-sub">(کلیک بکە بۆ گۆڕینێ)</span>
                             </div>
 
-                            <input type="file" id="imageUploader" accept="image/*" style="display: none;">
+                            <input type="file" id="imageUploader" accept="image/*" class="hidden-input">
                         </div>
                     </div>
                 </div>
@@ -745,31 +174,31 @@
                     <p class="section-subtitle">ناساندن و زانیاریێن دەربارەی من</p>
                 </div>
 
-                <div class="grid-cards" style="grid-template-columns: 1fr;">
+                <div class="grid-cards grid-single">
                     <div class="glass-card">
-                        <p style="color: var(--text-main); font-size: 0.9rem; line-height: 1.7;">
-                            سڵاو! من <strong style="color: var(--neon-red);">زانکۆ</strong> مە، دەرهێنەر و گەشەپێدەرێ وێب و دیزاینەرێ کارێن دیجیتاڵی ب ئەزموونا پڕوفیشناڵ. د هەوڵێن من دا هەردەم دروستکرنا ئەو پرۆژەیانە یێن کو کارپێکرنا ئاسان و شێوازەکێ گەلەک سەرنجڕاکێش و فخم هەیە.
+                        <p class="about-text">
+                            سڵاو! من <strong class="highlight-red">زانکۆ</strong> مە، دەرهێنەر و گەشەپێدەرێ وێب و دیزاینەرێ کارێن دیجیتاڵی ب ئەزموونا پڕوفیشناڵ. د هەوڵێن من دا هەردەم دروستکرنا ئەو پرۆژەیانە یێن کو کارپێکرنا ئاسان و شێوازەکێ گەلەک سەرنجڕاکێش و فخم هەیە.
                         </p>
 
-                        <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.25rem;">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: rgba(0,0,0,0.5); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--card-border);">
-                                <i class="fa-solid fa-location-dot" style="color: var(--neon-red); font-size: 1.2rem;"></i>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <i class="fa-solid fa-location-dot info-icon"></i>
                                 <div>
-                                    <div style="font-size: 0.65rem; color: var(--text-muted);">My Location</div>
-                                    <div style="font-weight: 700; font-size: 0.85rem;">📍 Duhok, Kurdistan, Iraq</div>
+                                    <div class="info-label">My Location</div>
+                                    <div class="info-val">📍 Duhok, Kurdistan, Iraq</div>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: rgba(0,0,0,0.5); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--card-border);">
-                                <i class="fa-solid fa-phone" style="color: var(--neon-red); font-size: 1.2rem;"></i>
+                            <div class="info-item">
+                                <i class="fa-solid fa-phone info-icon"></i>
                                 <div>
-                                    <div style="font-size: 0.65rem; color: var(--text-muted);">My Phone Number</div>
-                                    <div style="font-weight: 700; font-size: 0.85rem;">+964 750 604 5491</div>
+                                    <div class="info-label">My Phone Number</div>
+                                    <div class="info-val">+964 750 604 5491</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div style="margin-top: 1.25rem;">
-                            <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%88%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88..." target="_blank" class="btn-primary" style="width: 100%;">
+                        <div class="btn-full-wrap">
+                            <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%8ء%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88..." target="_blank" class="btn-primary btn-full">
                                 <span>Download CV</span>
                                 <i class="fa-solid fa-download"></i>
                             </a>
@@ -786,42 +215,34 @@
                 </div>
 
                 <div class="grid-cards services-4col">
-                    <div class="glass-card" style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(255,30,39,0.15); border: 1px solid var(--neon-red); display: flex; align-items: center; justify-content: center; color: var(--neon-red); font-size: 1.2rem;">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
+                    <div class="glass-card service-card">
+                        <div class="service-icon"><i class="fa-solid fa-code"></i></div>
                         <h3>Web Development</h3>
-                        <p style="color: var(--text-muted); font-size: 0.8rem;">
+                        <p class="service-desc">
                             دروستکرنا وێب‌سایتێن مۆدێرن و خێرا ب تەکنۆلۆژیایا نووی ب دیزاینا ڕیسپۆنسیڤ.
                         </p>
                     </div>
 
-                    <div class="glass-card" style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(255,30,39,0.15); border: 1px solid var(--neon-red); display: flex; align-items: center; justify-content: center; color: var(--neon-red); font-size: 1.2rem;">
-                            <i class="fa-solid fa-pen-nib"></i>
-                        </div>
+                    <div class="glass-card service-card">
+                        <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
                         <h3>UI/UX Designer</h3>
-                        <p style="color: var(--text-muted); font-size: 0.8rem;">
+                        <p class="service-desc">
                             دیزاینکرنا ڕووکارێن سەرنجڕاکێش ب ئامرازێن Figma و Canva ب ئاستەکێ شاهانە.
                         </p>
                     </div>
 
-                    <div class="glass-card" style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(255,30,39,0.15); border: 1px solid var(--neon-red); display: flex; align-items: center; justify-content: center; color: var(--neon-red); font-size: 1.2rem;">
-                            <i class="fa-solid fa-desktop"></i>
-                        </div>
+                    <div class="glass-card service-card">
+                        <div class="service-icon"><i class="fa-solid fa-desktop"></i></div>
                         <h3>IT Support & Hardware</h3>
-                        <p style="color: var(--text-muted); font-size: 0.8rem;">
+                        <p class="service-desc">
                             پشتیڤانییا تەکنیکی، ڕێكخستن و چارەسەرکرنا ئاریشێن سیستەمی و کۆمپیوتەری.
                         </p>
                     </div>
 
-                    <div class="glass-card" style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(255,30,39,0.15); border: 1px solid var(--neon-red); display: flex; align-items: center; justify-content: center; color: var(--neon-red); font-size: 1.2rem;">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
+                    <div class="glass-card service-card">
+                        <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
                         <h3>Cyber Security</h3>
-                        <p style="color: var(--text-muted); font-size: 0.8rem;">
+                        <p class="service-desc">
                             پاراستنا داتا و حسابان دژی هێرش و پاراستنا ئاسایشا دیجیتاڵی.
                         </p>
                     </div>
@@ -838,91 +259,91 @@
                 <div class="grid-cards projects-3col">
                     
                     <!-- 1. POS System -->
-                    <div class="glass-card" style="padding: 0; overflow: hidden;">
+                    <div class="glass-card project-card">
                         <div class="project-card-header">
                             <i class="fa-solid fa-cash-register project-icon"></i>
                         </div>
-                        <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div class="project-body">
                             <h3>سیستەمێ کاشێریێ (POS)</h3>
-                            <p style="color: var(--text-muted); font-size: 0.8rem;">سیستەمەکێ گەلەک پێشکەفتی بۆ بەڕێوەبرنا فڕۆشگەهان، گونجاو بۆ مۆبایل و دێسکتاپێ.</p>
-                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Mobile & Desktop</span>
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">POS System</span>
+                            <p class="project-desc">سیستەمەکێ گەلەک پێشکەفتی بۆ بەڕێوەبرنا فڕۆشگەهان، گونجاو بۆ مۆبایل و دێسکتاپێ.</p>
+                            <div class="tag-group">
+                                <span class="tag">Mobile & Desktop</span>
+                                <span class="tag">POS System</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 2. Language Learning -->
-                    <div class="glass-card" style="padding: 0; overflow: hidden;">
+                    <div class="glass-card project-card">
                         <div class="project-card-header">
                             <i class="fa-solid fa-language project-icon"></i>
                         </div>
-                        <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div class="project-body">
                             <h3>وێب‌سایتێ فێربوونا زمانێن جیهانی</h3>
-                            <p style="color: var(--text-muted); font-size: 0.8rem;">پلاتفۆڕمەکا ئۆنلاین بۆ فێربوونا زمانێن بیانی ب ڕێکارێن نووی و کارلێککار.</p>
-                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Education</span>
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Web Platform</span>
+                            <p class="project-desc">پلاتفۆڕمەکا ئۆنلاین بۆ فێربوونا زمانێن بیانی ب ڕێکارێن نووی و کارلێککار.</p>
+                            <div class="tag-group">
+                                <span class="tag">Education</span>
+                                <span class="tag">Web Platform</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 3. Kurdish AI -->
-                    <div class="glass-card" style="padding: 0; overflow: hidden;">
+                    <div class="glass-card project-card">
                         <div class="project-card-header">
                             <i class="fa-solid fa-robot project-icon"></i>
                         </div>
-                        <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div class="project-body">
                             <h3>زیرەکیا دەستکرد ب زمانێ کوردی</h3>
-                            <p style="color: var(--text-muted); font-size: 0.8rem;">پلاتفۆڕمەکا زیرەکا هۆشێ دەستکرد ئامادەکری ب زمانێ شێرینێ کوردی.</p>
-                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Artificial Intelligence</span>
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Kurdish AI</span>
+                            <p class="project-desc">پلاتفۆڕمەکا زیرەکا هۆشێ دەستکرد ئامادەکری ب زمانێ شێرینێ کوردی.</p>
+                            <div class="tag-group">
+                                <span class="tag">Artificial Intelligence</span>
+                                <span class="tag">Kurdish AI</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 4. Video Downloader -->
-                    <div class="glass-card" style="padding: 0; overflow: hidden;">
+                    <div class="glass-card project-card">
                         <div class="project-card-header">
                             <i class="fa-solid fa-circle-down project-icon"></i>
                         </div>
-                        <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div class="project-body">
                             <h3>داونلۆدکەرێ ڤیدیۆیان ژ سۆشیال میدیایێ</h3>
-                            <p style="color: var(--text-muted); font-size: 0.8rem;">ئامرازەکێ خێرا بۆ ڕاکێشان و داونلۆدکرنا ڤیدیۆیان ژ تۆڕێن سۆشیال میدیایێ ب کواڵتییا خاوەن.</p>
-                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Video Downloader</span>
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Tools</span>
+                            <p class="project-desc">ئامرازەکێ خێرا بۆ ڕاکێشان و داونلۆدکرنا ڤیدیۆیان ژ تۆڕێن سۆشیال میدیایێ ب کواڵتییا خاوەن.</p>
+                            <div class="tag-group">
+                                <span class="tag">Video Downloader</span>
+                                <span class="tag">Tools</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 5. Expense Tracker -->
-                    <div class="glass-card" style="padding: 0; overflow: hidden;">
+                    <div class="glass-card project-card">
                         <div class="project-card-header">
                             <i class="fa-solid fa-wallet project-icon"></i>
                         </div>
-                        <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div class="project-body">
                             <h3>وێب‌سایتێ خەرجی و داهاتێن ڕۆژانە</h3>
-                            <p style="color: var(--text-muted); font-size: 0.8rem;">سیستەمەکێ دارایی یێ ئاسان بۆ تۆمارکرن و کۆنترۆڵکرنا خەرجی و داهاتێن ڕۆژانە.</p>
-                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Finance App</span>
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Tracker</span>
+                            <p class="project-desc">سیستەمەکێ دارایی یێ ئاسان بۆ تۆمارکرن و کۆنترۆڵکرنا خەرجی و داهاتێن ڕۆژانە.</p>
+                            <div class="tag-group">
+                                <span class="tag">Finance App</span>
+                                <span class="tag">Tracker</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 6. Dollar & Gold Rates -->
-                    <div class="glass-card" style="padding: 0; overflow: hidden;">
+                    <div class="glass-card project-card">
                         <div class="project-card-header">
                             <i class="fa-solid fa-coins project-icon"></i>
                         </div>
-                        <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div class="project-body">
                             <h3>وێب‌سایتێ بازارێ دۆلاری و زێڕی</h3>
-                            <p style="color: var(--text-muted); font-size: 0.8rem;">دیارکرنا نرخێن ڕاستەوخۆ (Live) یێن دۆلاری و زێڕی ب شێوازەکێ خێرا د بازاردا.</p>
-                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Live Rates</span>
-                                <span style="font-size: 0.65rem; background: var(--accent-dark); border: 1px solid var(--neon-red); color: var(--neon-red); padding: 0.2rem 0.5rem; border-radius: 4px;">Market Tracker</span>
+                            <p class="project-desc">دیارکرنا نرخێن ڕاستەوخۆ (Live) یێن دۆلاری و زێڕی ب شێوازەکێ خێرا د بازاردا.</p>
+                            <div class="tag-group">
+                                <span class="tag">Live Rates</span>
+                                <span class="tag">Market Tracker</span>
                             </div>
                         </div>
                     </div>
@@ -939,28 +360,28 @@
 
                 <div class="skills-grid">
                     <div class="glass-card skill-item">
-                        <i class="fa-brands fa-html5" style="color: #f97316; font-size: 1.5rem;"></i>
-                        <span style="font-weight: 700; font-size: 0.85rem;">HTML5</span>
+                        <i class="fa-brands fa-html5 skill-icon html"></i>
+                        <span class="skill-name">HTML5</span>
                     </div>
                     <div class="glass-card skill-item">
-                        <i class="fa-brands fa-css3-alt" style="color: #3b82f6; font-size: 1.5rem;"></i>
-                        <span style="font-weight: 700; font-size: 0.85rem;">CSS3</span>
+                        <i class="fa-brands fa-css3-alt skill-icon css"></i>
+                        <span class="skill-name">CSS3</span>
                     </div>
                     <div class="glass-card skill-item">
-                        <i class="fa-brands fa-js" style="color: #eab308; font-size: 1.5rem;"></i>
-                        <span style="font-weight: 700; font-size: 0.85rem;">JavaScript</span>
+                        <i class="fa-brands fa-js skill-icon js"></i>
+                        <span class="skill-name">JavaScript</span>
                     </div>
                     <div class="glass-card skill-item">
-                        <i class="fa-brands fa-wordpress" style="color: #38bdf8; font-size: 1.5rem;"></i>
-                        <span style="font-weight: 700; font-size: 0.85rem;">WordPress</span>
+                        <i class="fa-brands fa-wordpress skill-icon wp"></i>
+                        <span class="skill-name">WordPress</span>
                     </div>
                     <div class="glass-card skill-item">
-                        <i class="fa-brands fa-python" style="color: #fcd34d; font-size: 1.5rem;"></i>
-                        <span style="font-weight: 700; font-size: 0.85rem;">Python</span>
+                        <i class="fa-brands fa-python skill-icon py"></i>
+                        <span class="skill-name">Python</span>
                     </div>
                     <div class="glass-card skill-item">
-                        <i class="fa-solid fa-layer-group" style="color: #f87171; font-size: 1.5rem;"></i>
-                        <span style="font-weight: 700; font-size: 0.85rem;">Elementor</span>
+                        <i class="fa-solid fa-layer-group skill-icon elementor"></i>
+                        <span class="skill-name">Elementor</span>
                     </div>
                 </div>
             </section>
@@ -974,53 +395,53 @@
 
                 <div class="contact-grid">
                     
-                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div class="contact-social-col">
                         <div class="glass-card">
-                            <h3 style="margin-bottom: 0.25rem;">تۆڕێن سۆشیال میدیایێ</h3>
-                            <p style="color: var(--text-muted); font-size: 0.8rem;">ب ڕێکا ڤان بەشێن خوارێ تە دشێت ڕاستەوخۆ پەیوەندیێ بکەی:</p>
+                            <h3>تۆڕێن سۆشیال میدیایێ</h3>
+                            <p class="contact-subtext">ب ڕێکا ڤان بەشێن خوارێ تە دشێت ڕاستەوخۆ پەیوەندیێ بکەی:</p>
                         </div>
 
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
-                            <a href="https://snapchat.com/t/0kgVlpKA" target="_blank" class="glass-card" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #fff;">
-                                <i class="fa-brands fa-snapchat" style="color: #facc15; font-size: 1.2rem;"></i>
-                                <span style="font-weight: 700; font-size: 0.8rem;">Snapchat</span>
+                        <div class="social-links-2col">
+                            <a href="https://snapchat.com/t/0kgVlpKA" target="_blank" class="glass-card social-item">
+                                <i class="fa-brands fa-snapchat snapchat-color"></i>
+                                <span>Snapchat</span>
                             </a>
-                            <a href="https://www.instagram.com/z44nko" target="_blank" class="glass-card" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #fff;">
-                                <i class="fa-brands fa-instagram" style="color: #ec4899; font-size: 1.2rem;"></i>
-                                <span style="font-weight: 700; font-size: 0.8rem;">Instagram</span>
+                            <a href="https://www.instagram.com/z44nko" target="_blank" class="glass-card social-item">
+                                <i class="fa-brands fa-instagram insta-color"></i>
+                                <span>Instagram</span>
                             </a>
-                            <a href="https://www.tiktok.com/@444.uw" target="_blank" class="glass-card" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #fff;">
-                                <i class="fa-brands fa-tiktok" style="color: #22d3ee; font-size: 1.2rem;"></i>
-                                <span style="font-weight: 700; font-size: 0.8rem;">TikTok</span>
+                            <a href="https://www.tiktok.com/@444.uw" target="_blank" class="glass-card social-item">
+                                <i class="fa-brands fa-tiktok tiktok-color"></i>
+                                <span>TikTok</span>
                             </a>
-                            <a href="https://t.me/z_14x" target="_blank" class="glass-card" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #fff;">
-                                <i class="fa-brands fa-telegram" style="color: #38bdf8; font-size: 1.2rem;"></i>
-                                <span style="font-weight: 700; font-size: 0.8rem;">Telegram</span>
+                            <a href="https://t.me/z_14x" target="_blank" class="glass-card social-item">
+                                <i class="fa-brands fa-telegram telegram-color"></i>
+                                <span>Telegram</span>
                             </a>
                         </div>
 
-                        <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%88%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88..." target="_blank" class="btn-primary" style="background: linear-gradient(135deg, #059669, #10b981); width: 100%;">
-                            <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
+                        <a href="https://wa.me/9647506045491?text=%D8%B3%DA%B5%D8%A7%D9%88%20%D8%B2%D8%A7%D9%86%DA%A9%D9%88..." target="_blank" class="btn-primary btn-wa-green">
+                            <i class="fa-brands fa-whatsapp icon-lg"></i>
                             <span>واتسئاپ (+964 750 604 5491)</span>
                         </a>
                     </div>
 
-                    <div class="glass-card" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div class="glass-card form-card">
                         <h3>Send Email</h3>
-                        <form id="contactForm" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <form id="contactForm" class="contact-form">
                             <div class="form-group">
-                                <label for="senderName" style="font-size: 0.75rem; color: var(--text-muted);">Your name</label>
+                                <label for="senderName">Your name</label>
                                 <input type="text" id="senderName" required placeholder="Enter your name" class="form-input">
                             </div>
                             <div class="form-group">
-                                <label for="senderEmail" style="font-size: 0.75rem; color: var(--text-muted);">Your email</label>
+                                <label for="senderEmail">Your email</label>
                                 <input type="email" id="senderEmail" required placeholder="Enter your email" class="form-input">
                             </div>
                             <div class="form-group">
-                                <label for="senderMessage" style="font-size: 0.75rem; color: var(--text-muted);">Your message...</label>
-                                <textarea id="senderMessage" rows="3" required placeholder="Tell me about your project..." class="form-input" style="resize: none;"></textarea>
+                                <label for="senderMessage">Your message...</label>
+                                <textarea id="senderMessage" rows="3" required placeholder="Tell me about your project..." class="form-input textarea-no-resize"></textarea>
                             </div>
-                            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.25rem;">
+                            <button type="submit" class="btn-primary btn-full">
                                 Send Message
                             </button>
                         </form>
@@ -1034,10 +455,10 @@
         <!-- FOOTER BAR -->
         <footer class="footer-bar">
             <div>
-                <i class="fa-solid fa-shield-halved" style="color: var(--neon-red);"></i>
+                <i class="fa-solid fa-shield-halved text-red-shield"></i>
                 <span>All Rights Reserved © Z44NKO 2026</span>
             </div>
-            <div style="font-weight: 700; color: var(--text-main);">
+            <div class="footer-author">
                 DESIGN & CODE BY Z44NKO
             </div>
         </footer>
@@ -1045,75 +466,7 @@
     </div>
 
     <!-- LIGHTWEIGHT INTERACTIVE JAVASCRIPT -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Mobile Slide-Out Drawer Navigation Toggle
-            const openDrawer = document.getElementById('openDrawer');
-            const closeDrawer = document.getElementById('closeDrawer');
-            const mobileDrawer = document.getElementById('mobileDrawer');
-            const drawerOverlay = document.getElementById('drawerOverlay');
-            const drawerLinks = document.querySelectorAll('.drawer-link');
-
-            function toggleDrawer(open) {
-                if (open) {
-                    mobileDrawer.classList.add('open');
-                    drawerOverlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    mobileDrawer.classList.remove('open');
-                    drawerOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            }
-
-            if (openDrawer && closeDrawer && drawerOverlay) {
-                openDrawer.addEventListener('click', () => toggleDrawer(true));
-                closeDrawer.addEventListener('click', () => toggleDrawer(false));
-                drawerOverlay.addEventListener('click', () => toggleDrawer(false));
-
-                drawerLinks.forEach(link => {
-                    link.addEventListener('click', () => toggleDrawer(false));
-                });
-            }
-
-            // Interactive User Profile Image Uploader Trigger
-            const uploadPrompt = document.getElementById('uploadPrompt');
-            const imageUploader = document.getElementById('imageUploader');
-            const userPhotoImage = document.getElementById('userPhotoImage');
-
-            if (uploadPrompt && imageUploader && userPhotoImage) {
-                uploadPrompt.addEventListener('click', () => imageUploader.click());
-                userPhotoImage.addEventListener('click', () => imageUploader.click());
-
-                imageUploader.addEventListener('change', (event) => {
-                    const file = event.target.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = function(e) {
-                            userPhotoImage.src = e.target.result;
-                            userPhotoImage.style.display = 'block';
-                            uploadPrompt.style.display = 'none';
-                        };
-                        reader.readAsDataURL(file);
-                    }
-                });
-            }
-
-            // Direct Email Form Mailto Execution
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const name = document.getElementById('senderName')?.value || '';
-                    const email = document.getElementById('senderEmail')?.value || '';
-                    const message = document.getElementById('senderMessage')?.value || '';
-
-                    const mailtoUrl = `mailto:z.14x@outlook.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\nFrom: " + email)}`;
-                    window.location.href = mailtoUrl;
-                });
-            }
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
 
